@@ -3,6 +3,7 @@ import cors from "cors"
 import routes from "./routes.js";
 import mongoose from "mongoose"
 import 'dotenv/config'
+import { authMiddleware } from "./middleware/authMiddleware.js";
 
 const app = express();
 try {
@@ -17,6 +18,7 @@ try {
 
 app.use(cors());
 app.use(express.json())
+app.use(authMiddleware)
 
 app.use(routes);
 app.listen(3030, () => 'server is listening on http://localhost:3030...')
