@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 import bcrypt from "bcrypt";
 
-const user = new Schema({
+const userSchema = new Schema({
     email: {
         type: String,
         required: [true, 'User email is required!'],
@@ -17,4 +17,4 @@ userSchema.pre('save', async function () {
 })
 
 const User = model('User', userSchema);
-export default user
+export default User
