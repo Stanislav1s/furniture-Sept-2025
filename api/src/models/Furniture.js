@@ -28,7 +28,7 @@ const furnitureSchema = new Schema({
         required: [true, 'Price is required'],
         min: [0, 'price must be a positive number']
     },
-    imageUrl: {
+    img: {
         type: String,
         required: [true, 'imageUrl is required']
     },
